@@ -14,9 +14,9 @@ jobs:
 
     - name: Clean workspace
       run: |
-        sudo chown -R $(whoami):$(whoami) ${{ github.workspace }} || true
-        rm -rf ${{ github.workspace }}/* || true
-        rm -rf ${{ github.workspace }}/.* || true
+        sudo rm -rf ${{ github.workspace }}/* || true
+        sudo rm -rf ${{ github.workspace }}/.git || true
+        sudo rm -rf ${{ github.workspace }}/.github || true
 
     - uses: actions/checkout@v4
       with:
@@ -61,9 +61,9 @@ jobs:
     steps:
     - name: Clean workspace
       run: |
-        sudo chown -R $(whoami):$(whoami) ${{ github.workspace }} || true
-        rm -rf ${{ github.workspace }}/* || true
-        rm -rf ${{ github.workspace }}/.* || true
+        sudo rm -rf ${{ github.workspace }}/* || true
+        sudo rm -rf ${{ github.workspace }}/.git || true
+        sudo rm -rf ${{ github.workspace }}/.github || true
 
     - uses: actions/checkout@v4
     
